@@ -33,3 +33,7 @@
 .articlesList {
 	border: orange solid;
 }
+
+.article-card {
+	border: teal solid;
+}
