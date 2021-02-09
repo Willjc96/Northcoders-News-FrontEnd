@@ -1,22 +1,39 @@
 import React, { Component } from "react";
 import * as api from "../api";
+import { Link } from "@reach/router";
 
 class NavBar extends Component {
 	state = {
-		articles: [],
+		topics: [],
 	};
 
 	componentDidMount() {
-		this.fetchArticles();
+		this.fetchTopics();
 	}
 
 	render() {
-		return <nav className="navbar">NavBar</nav>;
+		const { topics } = this.state;
+		return (
+			<nav className="navbar">
+				<ul>
+					<li>
+						<Link to={"/"}>
+							<button>All</button>
+						</Link>
+					</li>
+					<li>
+						<Link to={"/topic/coding"}>
+							<button>All</button>
+						</Link>
+					</li>
+				</ul>
+			</nav>
+		);
 	}
 
-	fetchArticles() {
-		api.getArticles().then((articles) => {
-			this.setState({ articles });
+	fetchTopics() {
+		api.getTopics().then((topics) => {
+			this.setState({ topics });
 		});
 	}
 }

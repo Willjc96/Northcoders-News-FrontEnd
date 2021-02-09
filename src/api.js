@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const getArticles = () => {
+export const getTopics = () => {
 	return axios
-		.get("https://nc-news-api-front-end.herokuapp.com/api/articles")
+		.get("https://nc-news-api-front-end.herokuapp.com/api/topics")
 		.then(({ data }) => {
-			return data.articles;
+			return data.topics;
 		});
 };
