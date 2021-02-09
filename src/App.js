@@ -2,6 +2,7 @@ import "./App.css";
 import Title from "./components/Title";
 import Nav from "./components/NavBar";
 import ArticlesList from "./components/ArticlesList";
+import { Router } from "@reach/router";
 
 function App() {
 	return (
@@ -9,7 +10,10 @@ function App() {
 			<header className="App-header">
 				<Title />
 				<Nav />
-				<ArticlesList />
+				<Router>
+					<ArticlesList path="/" />
+					<ArticlesList path="/topic/:topic" />
+				</Router>
 			</header>
 		</div>
 	);
