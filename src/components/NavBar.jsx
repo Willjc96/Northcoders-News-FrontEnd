@@ -15,18 +15,18 @@ class NavBar extends Component {
 		const { topics } = this.state;
 		return (
 			<nav className="navbar">
-				<ul>
-					<li>
-						<Link to={"/"}>
-							<button>All</button>
-						</Link>
-					</li>
-					<li>
-						<Link to={"/topic/coding"}>
-							<button>All</button>
-						</Link>
-					</li>
-				</ul>
+				<Link to={"/"}>
+					<button>All</button>
+				</Link>
+				<Link to={"/topic/coding"}>
+					<button>Coding</button>
+				</Link>
+				<Link to={"/topic/football"}>
+					<button>Football</button>
+				</Link>
+				<Link to={"/topic/cooking"}>
+					<button>Cooking</button>
+				</Link>
 			</nav>
 		);
 	}
