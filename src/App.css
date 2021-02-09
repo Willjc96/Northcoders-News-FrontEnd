@@ -1,12 +1,17 @@
 .App {
 	text-align: center;
+	border: red solid;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: grid;
+	grid-template: 1fr 50px 8fr / 1fr;
+	grid-template-areas:
+		"header"
+		"navbar"
+		"content";
 }
 
 .App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
@@ -15,4 +20,16 @@
 
 .App-link {
 	color: #61dafb;
+}
+
+.title {
+	border: blue solid;
+}
+
+.navbar {
+	border: limegreen solid;
+}
+
+.articlesList {
+	border: orange solid;
 }
