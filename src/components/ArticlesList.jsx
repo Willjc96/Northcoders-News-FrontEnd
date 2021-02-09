@@ -4,19 +4,19 @@ import * as api from "../api";
 
 class ArticlesList extends Component {
 	state = {
-		articles: [
-			{
-				article_id: 20,
-				article_title: "Is Will the best?",
-				topic: "Documentary",
-				author: "Me",
-			},
-		],
+		articles: [],
 		isLoading: true,
 	};
 
 	componentDidMount() {
 		this.fetchArticles();
+	}
+
+	componentDidUpdate(prevProps) {
+		const { topic } = this.props;
+		if (topic != prevProps.topic) {
+			this.fetchArticles(topic);
+		}
 	}
 
 	render() {
@@ -29,8 +29,8 @@ class ArticlesList extends Component {
 			</main>
 		);
 	}
-	fetchArticles() {
-		api.getArticles().then((articles) => {
+	fetchArticles(topic) {
+		api.getArticles(topic).then((articles) => {
 			this.setState({ articles, isLoading: false });
 		});
 	}

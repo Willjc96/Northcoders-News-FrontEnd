@@ -8,10 +8,11 @@ export const getTopics = () => {
 		});
 };
 
-export const getArticles = () => {
-	return axios
-		.get("https://nc-news-api-front-end.herokuapp.com/api/articles")
-		.then(({ data }) => {
-			return data.articles;
-		});
+export const getArticles = (topic) => {
+	const url = "https://nc-news-api-front-end.herokuapp.com/api/articles";
+	const queryTern = topic ? `${url}?topic=${topic}` : url;
+
+	return axios.get(queryTern).then(({ data }) => {
+		return data.articles;
+	});
 };
