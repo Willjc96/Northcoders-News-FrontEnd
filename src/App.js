@@ -2,6 +2,7 @@ import "./App.css";
 import Title from "./components/Title";
 import Nav from "./components/NavBar";
 import ArticlesList from "./components/ArticlesList";
+import ArticleBody from "./components/ArticleBody";
 import { Router } from "@reach/router";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 				<Router>
 					<ArticlesList path="/" />
 					<ArticlesList path="/topic/:topic" />
+					<ArticleBody path="/articles/:article_id" />
 				</Router>
 			</header>
 		</div>

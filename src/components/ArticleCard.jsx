@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "@reach/router";
+import ArticleBody from "./ArticleBody";
 
 const ArticleCard = ({
-	article_title,
+	title,
 	article_id,
 	created_at,
 	votes,
@@ -11,10 +13,12 @@ const ArticleCard = ({
 }) => {
 	return (
 		<section className="article-card">
-			<h2>{article_title}</h2>
-			<p>{topic}</p>
-			<p>{author}</p>
-			<p>{article_id}</p>
+			<h2>{title}</h2>
+			<p>Topic: {topic}</p>
+			<p>Author: {author}</p>
+			<Link to={`/articles/${article_id}`}>
+				<button>Read Article</button>
+			</Link>
 		</section>
 	);
 };
