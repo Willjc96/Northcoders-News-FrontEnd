@@ -1,3 +1,15 @@
-.NavBar {
+.navbar {
 	text-align: center;
+}
+
+#all-btn:hover,
+#coding-btn:hover,
+#football-btn:hover,
+#cooking-btn:hover {
+	color: red;
+}
+
+.comments-btn {
+	width: 95vw;
+	height: 5vh;
 }

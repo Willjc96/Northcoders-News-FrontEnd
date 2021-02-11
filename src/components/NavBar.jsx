@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../NavBar.css";
 import * as api from "../api";
 import { Link } from "@reach/router";
 
@@ -16,19 +17,51 @@ class NavBar extends Component {
 		return (
 			<nav className="navbar">
 				<Link to={"/"}>
-					<button>All</button>
+					<button
+						id="all-btn"
+						onClick={() => {
+							this.handleClick();
+						}}
+					>
+						All
+					</button>
 				</Link>
 				<Link to={"/topic/coding"}>
-					<button>Coding</button>
+					<button
+						id="coding-btn"
+						onClick={() => {
+							this.handleClick();
+						}}
+					>
+						Coding
+					</button>
 				</Link>
 				<Link to={"/topic/football"}>
-					<button>Football</button>
+					<button
+						id="football-btn"
+						onClick={() => {
+							this.handleClick();
+						}}
+					>
+						Football
+					</button>
 				</Link>
 				<Link to={"/topic/cooking"}>
-					<button>Cooking</button>
+					<button
+						id="cooking-btn"
+						onClick={() => {
+							this.handleClick();
+						}}
+					>
+						Cooking
+					</button>
 				</Link>
 			</nav>
 		);
+	}
+
+	handleClick() {
+		console.log("CLICKED");
 	}
 
 	fetchTopics() {
