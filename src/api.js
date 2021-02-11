@@ -24,5 +24,12 @@ export const getArticleById = (article_id) => {
 		return data.article;
 	});
 };
-// query does not execute when navigating from the "All" topics page
+
+export const getComments = (article_id) => {
+	const url = `https://nc-news-api-front-end.herokuapp.com/api/articles/${article_id}/comments`;
+
+	return axios.get(url).then(({ data }) => {
+		return data;
+	});
+};
 // page snaps to a part of the page when navigating

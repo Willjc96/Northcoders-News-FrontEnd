@@ -18,6 +18,10 @@ class ArticleBody extends Component {
 				<main className="articlePage">
 					<h2>{this.state.article.title}</h2>
 					<p>{this.state.article.topic}</p>
+					<p>{this.state.article.body}</p>
+					<Link to={`/articles/${this.state.article.article_id}/comments`}>
+						<button className="comments-btn">Comments</button>
+					</Link>
 				</main>
 			);
 		}
