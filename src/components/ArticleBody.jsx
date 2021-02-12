@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { Link } from "@reach/router";
+import VoteUpdater from "./VoteUpdater";
 
 class ArticleBody extends Component {
 	state = {
@@ -13,19 +14,23 @@ class ArticleBody extends Component {
 	}
 
 	render() {
-		if (this.state.isLoading === false) {
-			return (
-				<main className="articlePage">
-					<h2>{this.state.article.title}</h2>
-					<p>{this.state.article.topic}</p>
-					<p>{this.state.article.body}</p>
-					<Link to={`/articles/${this.state.article.article_id}/comments`}>
-						<button className="comments-btn">Comments</button>
-					</Link>
-				</main>
-			);
+		if (this.state.isLoading) {
+			return <p>Loading...</p>;
 		}
-		return <p>Loading...</p>;
+		return (
+			<main className="article-page">
+				<h2>{this.state.article.title}</h2>
+				<p>{this.state.article.topic}</p>
+				<p>{this.state.article.body}</p>
+				<Link to={`/articles/${this.state.article.article_id}/comments`}>
+					<button className="comments-btn">Comments</button>
+				</Link>
+				<VoteUpdater
+					votes={this.state.article.votes}
+					id={this.state.article.article_id}
+				/>
+			</main>
+		);
 	}
 
 	fetchArticleById() {

@@ -32,4 +32,9 @@ export const getComments = (article_id) => {
 		return data;
 	});
 };
+
+export const patchVotes = (id, voteChange) => {
+	const url = `https://nc-news-api-front-end.herokuapp.com/api/articles/${id}`;
+	return axios.patch(url, { inc_votes: voteChange });
+};
 // page snaps to a part of the page when navigating
