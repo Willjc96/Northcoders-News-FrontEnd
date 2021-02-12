@@ -54,14 +54,14 @@ class ArticleComments extends Component {
 		);
 	}
 
-	addComment(newComment) {
+	addComment = (newComment) => {
 		this.setState((currentState) => {
 			return { comments: [newComment, ...currentState.comments] };
 		});
 		//set state with func and current state
 		//return state {comment:}
 		// comment will hold an array [newComment, {...currentState.comments}]
-	}
+	};
 
 	fetchComments(article_id) {
 		api.getComments(article_id).then(({ comments }) => {

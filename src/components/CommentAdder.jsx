@@ -31,7 +31,8 @@ class CommentAdder extends Component {
 		api
 			.postComment(article_id, username, comment)
 			.then((comment) => {
-				console.log(comment);
+				this.props.addComment(comment);
+				this.setState({ comment: "" });
 			})
 			.catch((error) => console.dir(error));
 	};
