@@ -14,21 +14,22 @@ class ArticleBody extends Component {
 	}
 
 	render() {
+		const { article } = this.state;
 		if (this.state.isLoading) {
 			return <p>Loading...</p>;
 		}
 		return (
 			<main className="article-page">
-				<h2>{this.state.article.title}</h2>
-				<p>{this.state.article.topic}</p>
-				<p>{this.state.article.body}</p>
-				<Link to={`/articles/${this.state.article.article_id}/comments`}>
+				<h2>{article.title}</h2>
+				<p>{article.topic}</p>
+				<p>{article.body}</p>
+				<Link to={`/articles/${article.article_id}/comments`}>
 					<button className="comments-btn">Comments</button>
 				</Link>
 				<VoteUpdater
-					votes={this.state.article.votes}
-					id={this.state.article.article_id}
-					article={true}
+					votes={article.votes}
+					id={article.article_id}
+					parent="article"
 				/>
 			</main>
 		);

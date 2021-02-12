@@ -33,8 +33,15 @@ export const getComments = (article_id) => {
 	});
 };
 
-export const patchVotes = (id, voteChange) => {
-	const url = `https://nc-news-api-front-end.herokuapp.com/api/articles/${id}`;
+export const patchVotes = (id, voteChange, placeOfVote) => {
+	const url = `https://nc-news-api-front-end.herokuapp.com/api/${placeOfVote}s/${id}`;
 	return axios.patch(url, { inc_votes: voteChange });
 };
-// page snaps to a part of the page when navigating
+
+export const postComment = (article_id, username, comment) => {
+	const url = `https://nc-news-api-front-end.herokuapp.com/api/articles/${article_id}/comments`;
+	//console.log(article_id, username, comment);
+	return axios
+		.post(url, { body: comment, username })
+		.then((response) => response.data.comment);
+};

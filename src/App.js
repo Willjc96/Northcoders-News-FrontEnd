@@ -9,7 +9,6 @@ import { Router } from "@reach/router";
 function App() {
 	return (
 		<div className="App">
-			{/* <header className="App-header"> */}
 			<Title />
 			<Nav />
 			<Router>
@@ -18,7 +17,6 @@ function App() {
 				<ArticleBody path="/articles/:article_id" />
 				<ArticleComments path="/articles/:article_id/comments" />
 			</Router>
-			{/* </header> */}
 		</div>
 	);
 }

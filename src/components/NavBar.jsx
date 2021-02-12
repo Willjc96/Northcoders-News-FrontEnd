@@ -26,42 +26,27 @@ class NavBar extends Component {
 						All
 					</button>
 				</Link>
-				<Link to={"/topic/coding"}>
-					<button
-						id="coding-btn"
-						onClick={() => {
-							this.handleClick();
-						}}
-					>
-						Coding
-					</button>
-				</Link>
-				<Link to={"/topic/football"}>
-					<button
-						id="football-btn"
-						onClick={() => {
-							this.handleClick();
-						}}
-					>
-						Football
-					</button>
-				</Link>
-				<Link to={"/topic/cooking"}>
-					<button
-						id="cooking-btn"
-						onClick={() => {
-							this.handleClick();
-						}}
-					>
-						Cooking
-					</button>
-				</Link>
+				{topics.map((topic) => {
+					return (
+						<Link to={`/topic/${topic.slug}`}>
+							<button
+								id={`${topic.slug}}-btn`}
+								onClick={() => {
+									this.handleClick();
+								}}
+							>
+								{topic.slug}
+							</button>
+						</Link>
+					);
+				})}
 			</nav>
 		);
 	}
 
 	handleClick() {
 		console.log("CLICKED");
+		this.state.selectedTopic = "selected";
 	}
 
 	fetchTopics() {
