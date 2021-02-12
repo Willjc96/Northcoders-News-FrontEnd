@@ -2,20 +2,16 @@
 	text-align: center;
 	border: red solid;
 	background-color: #282c34;
-	min-height: 100vh;
 	display: grid;
-	grid-template: 1fr 50px 8fr / 1fr;
+	grid-template: 0.5fr 50px 14fr / 1fr;
 	grid-template-areas:
 		"header"
 		"navbar"
 		"content";
-}
-
-.App-header {
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
 	color: white;
+	font-size: calc(10px + 2vmin);
+	justify-content: center;
+	align-items: top;
 }
 
 .App-link {
@@ -24,6 +20,10 @@
 
 .title {
 	border: blue solid;
+	margin: 2px;
+}
+.h2 {
+	color: red;
 }
 
 .navbar {
@@ -32,12 +32,50 @@
 
 .articlesList {
 	border: orange solid;
+	height: 87vh;
+	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .article-card {
 	border: teal solid;
 }
 
+.article-page {
+	align-items: top;
+	margin-top: auto;
+}
+
 .comment-card {
 	border: slateblue solid;
+	width: 80vw;
+	display: grid;
+	grid-template-columns: auto;
+}
+
+.comments-list {
+	border: aquamarine solid;
+	overflow-y: scroll;
+	font-size: small;
+	height: 80vh;
+}
+
+.submit-comment {
+	height: 7vh;
+	width: 90vw;
+	overflow-wrap: normal;
+	overflow-x: auto;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+#return-to-article-link {
+	text-decoration: none;
+}
+
+.return-to-article {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
 }

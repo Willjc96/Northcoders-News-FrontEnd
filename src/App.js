@@ -9,16 +9,16 @@ import { Router } from "@reach/router";
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<Title />
-				<Nav />
-				<Router>
-					<ArticlesList path="/" />
-					<ArticlesList path="/topic/:topic" />
-					<ArticleBody path="/articles/:article_id" />
-					<ArticleComments path="/articles/:article_id/comments" />
-				</Router>
-			</header>
+			{/* <header className="App-header"> */}
+			<Title />
+			<Nav />
+			<Router>
+				<ArticlesList path="/" />
+				<ArticlesList path="/topic/:topic" />
+				<ArticleBody path="/articles/:article_id" />
+				<ArticleComments path="/articles/:article_id/comments" />
+			</Router>
+			{/* </header> */}
 		</div>
 	);
 }
