@@ -11,7 +11,7 @@ class VoteUpdater extends Component {
 		const { voteChange } = this.state;
 		return (
 			<div className="VoteUpdater">
-				<p>Like this article?</p>
+				<p>Like this {this.props.article ? "article" : "comment"}?</p>
 				<button
 					onClick={() => {
 						this.handleClick(1);

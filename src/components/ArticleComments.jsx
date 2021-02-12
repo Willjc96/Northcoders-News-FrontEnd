@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../api";
 import "../App.css";
+import VoteUpdater from "./VoteUpdater";
 
 class ArticleComments extends Component {
 	state = {
@@ -39,6 +40,7 @@ class ArticleComments extends Component {
 								<br></br>
 								{comment.body}
 								<p className="comment-votes">{comment.votes}</p>
+								<VoteUpdater votes={comment.votes} id={comment.comment_id} />
 							</p>
 						);
 					})}

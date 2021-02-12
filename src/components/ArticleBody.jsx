@@ -28,6 +28,7 @@ class ArticleBody extends Component {
 				<VoteUpdater
 					votes={this.state.article.votes}
 					id={this.state.article.article_id}
+					article={true}
 				/>
 			</main>
 		);
