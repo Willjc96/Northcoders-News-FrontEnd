@@ -1,31 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import * as api from "../api";
 
-const VoteUpdater = ({ votes, id }) => {
-	const handleClick = (voteChange) => {
-		api.patchVotes(id, voteChange).catch(console.log);
+class VoteUpdater extends Component {
+	state = {
+		voteChange: 0,
 	};
 
-	return (
-		<div className="VoteUpdater">
-			<p>Like this article?</p>
-			<button
-				onClick={() => {
-					handleClick(1);
-				}}
-			>
-				Yes
-			</button>
-			<p>{votes}</p>
-			<button
-				onClick={() => {
-					handleClick(-1);
-				}}
-			>
-				No
-			</button>
-		</div>
-	);
-};
+	render() {
+		const { votes } = this.props;
+		const { voteChange } = this.state;
+		return (
+			<div className="VoteUpdater">
+				<p>Like this article?</p>
+				<button
+					onClick={() => {
+						this.handleClick(1);
+					}}
+				>
+					Yes
+				</button>
+				<p>{votes + voteChange}</p>
+				<button
+					onClick={() => {
+						this.handleClick(-1);
+					}}
+				>
+					No
+				</button>
+			</div>
+		);
+	}
+	handleClick = (voteNumber) => {
+		const { id } = this.props;
+		this.setState((currentState) => {
+			return { voteChange: currentState.voteChange + voteNumber };
+		});
+		api.patchVotes(id, voteNumber).catch(console.log);
+	};
+}
 
 export default VoteUpdater;
