@@ -16,7 +16,12 @@ class ArticleBody extends Component {
 	render() {
 		const { article } = this.state;
 		if (this.state.isLoading) {
-			return <p>Loading...</p>;
+			return (
+				<>
+					<p>Loading...</p>
+					<div className="loading-screen"></div>
+				</>
+			);
 		}
 		return (
 			<main className="article-page">
@@ -26,11 +31,7 @@ class ArticleBody extends Component {
 				<Link to={`/articles/${article.article_id}/comments`}>
 					<button className="comments-btn">Comments</button>
 				</Link>
-				<VoteUpdater
-					votes={article.votes}
-					id={article.article_id}
-					parent="article"
-				/>
+				<VoteUpdater votes={article.votes} id={article.article_id} parent="article" />
 			</main>
 		);
 	}

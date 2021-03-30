@@ -9,6 +9,13 @@
 	color: red;
 }
 
+#all-btn,
+#coding-btn,
+#football-btn {
+	margin-right: 0.5%;
+	margin-bottom: 0.5%;
+}
+
 .comments-btn {
 	width: 95vw;
 	height: 5vh;

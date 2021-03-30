@@ -6,6 +6,7 @@ import { Link } from "@reach/router";
 class NavBar extends Component {
 	state = {
 		topics: [],
+		selected: "all",
 	};
 
 	componentDidMount() {
@@ -13,14 +14,14 @@ class NavBar extends Component {
 	}
 
 	render() {
-		const { topics } = this.state;
+		const { topics, selected } = this.state;
 		return (
 			<nav className="navbar">
 				<Link to={"/"}>
 					<button
 						id="all-btn"
-						onClick={() => {
-							this.handleClick();
+						onClick={(event) => {
+							this.handleClick(event);
 						}}
 					>
 						All
@@ -29,12 +30,7 @@ class NavBar extends Component {
 				{topics.map((topic) => {
 					return (
 						<Link to={`/topic/${topic.slug}`}>
-							<button
-								id={`${topic.slug}}-btn`}
-								onClick={() => {
-									this.handleClick();
-								}}
-							>
+							<button className={selected === topic.slug && "selected"} id={`${topic.slug}-btn`} onClick={this.handleClick}>
 								{topic.slug}
 							</button>
 						</Link>
@@ -44,11 +40,9 @@ class NavBar extends Component {
 		);
 	}
 
-	handleClick() {
-		console.log("CLICKED");
-		this.state.selectedTopic = "selected";
-	}
-
+	handleClick = (event) => {
+		this.setState({ selected: event.target.value });
+	};
 	fetchTopics() {
 		api.getTopics().then((topics) => {
 			this.setState({ topics });

@@ -40,7 +40,6 @@ export const patchVotes = (id, voteChange, placeOfVote) => {
 
 export const postComment = (article_id, username, comment) => {
 	const url = `https://nc-news-api-front-end.herokuapp.com/api/articles/${article_id}/comments`;
-	//console.log(article_id, username, comment);
 	return axios
 		.post(url, { body: comment, username })
 		.then((response) => response.data.comment);

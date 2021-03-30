@@ -21,6 +21,14 @@ class ArticlesList extends Component {
 
 	render() {
 		const { articles } = this.state;
+		if (this.state.isLoading) {
+			return (
+				<>
+					<p>Loading articles...</p>
+					<div className="loading-screen"></div>
+				</>
+			);
+		}
 		return (
 			<main className="articlesList">
 				{articles.map((article) => {

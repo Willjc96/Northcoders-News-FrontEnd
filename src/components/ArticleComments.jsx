@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../api";
-import "../App.css";
 import VoteUpdater from "./VoteUpdater";
 import CommentAdder from "./CommentAdder";
 
@@ -19,14 +18,11 @@ class ArticleComments extends Component {
 		const { isLoading } = this.state;
 		const { article_id } = this.props;
 		if (isLoading) {
-			return <p>Loading comments...</p>;
+			return <p className="loading">Loading comments...</p>;
 		}
 		return (
 			<main className="comments-section">
-				<Link
-					to={`/articles/${this.props.article_id}`}
-					id="return-to-article-link"
-				>
+				<Link to={`/articles/${this.props.article_id}`} id="return-to-article-link">
 					<button className="return-to-article">Back to article</button>
 				</Link>
 				<>
@@ -40,11 +36,7 @@ class ArticleComments extends Component {
 								<br></br>
 								{comment.body}
 								<p className="comment-votes">
-									<VoteUpdater
-										votes={comment.votes}
-										id={comment.comment_id}
-										parent="comment"
-									/>
+									<VoteUpdater votes={comment.votes} id={comment.comment_id} parent="comment" />
 								</p>
 							</p>
 						);
@@ -58,9 +50,6 @@ class ArticleComments extends Component {
 		this.setState((currentState) => {
 			return { comments: [newComment, ...currentState.comments] };
 		});
-		//set state with func and current state
-		//return state {comment:}
-		// comment will hold an array [newComment, {...currentState.comments}]
 	};
 
 	fetchComments(article_id) {
