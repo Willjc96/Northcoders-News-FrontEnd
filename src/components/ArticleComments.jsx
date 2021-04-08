@@ -32,7 +32,8 @@ class ArticleComments extends Component {
 					{this.state.comments.map((comment) => {
 						return (
 							<p className="comment-card">
-								{comment.comment_id}
+								User: {comment.author}
+								<br></br>
 								<br></br>
 								{comment.body}
 								<p className="comment-votes">

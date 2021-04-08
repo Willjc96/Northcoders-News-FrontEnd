@@ -25,10 +25,11 @@ class ArticleBody extends Component {
 		}
 		return (
 			<main className="article-page">
-				<h2>{article.title}</h2>
-				<p>{article.topic}</p>
-				<p>{article.body}</p>
-				<Link to={`/articles/${article.article_id}/comments`}>
+				<h2 className="textTitle">{article.title}</h2>
+				<p className="textAuthor">By {article.author[0].toUpperCase() + article.author.slice([1])}</p>
+				<p className="textTopic">Topic: {article.topic[0].toUpperCase() + article.topic.slice([1])}</p>
+				<p className="textBody">{article.body}</p>
+				<Link className="comments-btn" to={`/articles/${article.article_id}/comments`}>
 					<button className="comments-btn">Comments</button>
 				</Link>
 				<VoteUpdater votes={article.votes} id={article.article_id} parent="article" />

@@ -1,6 +1,6 @@
 .App {
 	text-align: center;
-	border: red solid;
+	/* border: red solid; */
 	background-color: #282c34;
 	display: grid;
 	color: white;
@@ -14,7 +14,7 @@
 }
 
 .title {
-	border: blue solid;
+	/* border: blue solid; */
 	margin: 2px;
 }
 .h2 {
@@ -22,11 +22,11 @@
 }
 
 .navbar {
-	border: limegreen solid;
+	/* border: limegreen solid; */
 }
 
 .articlesList {
-	border: orange solid;
+	/* border: orange solid; */
 	height: 100%;
 	max-height: 90vh;
 	overflow: hidden;
@@ -34,13 +34,23 @@
 }
 
 .article-card {
-	border: teal solid;
+	border: red solid;
 	margin-top: 5px;
 	margin-bottom: 10px;
 	margin-left: 20%;
 	margin-right: 20%;
 	background-color: #40454e;
 	border-radius: 2rem;
+}
+
+.cardTitle {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.cardTopic {
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 .readArticle-btn {
@@ -52,13 +62,50 @@
 	margin-top: auto;
 }
 
-.VoteUpdater {
-	margin-bottom: 10px;
+.textTitle {
+	margin-bottom: 1%;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+.textAuthor {
+	margin-top: 0;
+	font-size: 75%;
+}
+
+.textTopic {
+	font-size: 75%;
+	text-align: justify;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.textBody {
+	text-align: justify;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.voteUpdater {
+	margin: 0px;
+}
+
+.likeBtn {
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+
+.dislikeBtn {
+	margin-bottom: 8%;
+}
+
+.voteCount {
+	margin: 0;
 }
 
 .comment-card {
-	background-color: rgb(122, 122, 122);
-	border: slateblue solid;
+	background-color: rgb(54, 54, 54);
+	border: lightskyblue solid;
 	width: 60vw;
 	min-width: 230px;
 	display: grid;
@@ -67,7 +114,7 @@
 }
 
 .comments-list {
-	border: aquamarine solid;
+	/* border: aquamarine solid; */
 	overflow-y: scroll;
 	font-size: small;
 	height: 80vh;
@@ -75,6 +122,12 @@
 	padding-right: 27%;
 	margin-bottom: 10px;
 }
+
+/* .comments-btn {
+	wid
+	margin-left: 8%;
+	margin-right: 8%;
+} */
 
 .submit-comment {
 	height: 7vh;

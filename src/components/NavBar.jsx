@@ -31,7 +31,7 @@ class NavBar extends Component {
 					return (
 						<Link to={`/topic/${topic.slug}`}>
 							<button className={selected === topic.slug && "selected"} id={`${topic.slug}-btn`} onClick={this.handleClick}>
-								{topic.slug}
+								{topic.slug[0].toUpperCase() + topic.slug.slice([1])}
 							</button>
 						</Link>
 					);

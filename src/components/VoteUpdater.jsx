@@ -10,24 +10,26 @@ class VoteUpdater extends Component {
 		const { votes } = this.props;
 		const { voteChange } = this.state;
 		return (
-			<div className="VoteUpdater">
-				<p>Like this {this.props.parent}?</p>
+			<div className="voteUpdater">
+				{/* <p>Like this {this.props.parent}?</p> */}
 				<button
+					className="likeBtn"
 					disabled={voteChange === 1}
 					onClick={() => {
 						this.handleClick(1);
 					}}
 				>
-					Yes
+					Like
 				</button>
-				<p>{votes + voteChange}</p>
+				<p className="voteCount">{votes + voteChange}</p>
 				<button
+					className="dislikeBtn"
 					disabled={voteChange === -1}
 					onClick={() => {
 						this.handleClick(-1);
 					}}
 				>
-					No
+					Dislike
 				</button>
 			</div>
 		);
